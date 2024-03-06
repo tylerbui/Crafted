@@ -1,11 +1,27 @@
-import {useState} from 'react-router-dom';
-
-export default function Products() {
+import { useState, useRef } from 'react';
+import ProductList from '../../components/ProductList/ProductList';
+import Category from '../../components/Category/Category';
+import './Product.css';
+export default function Products(cart,setCart) {
     const [products,setProducts] = useState([]);
+    const [activeCat, setActiveCat] = useState('');
+    const categoriesRef  = useRef();
+
+    
     return(
         <main>
             <div className="Products-main-index">
-
+            <aside className="Category">
+                {categoriesRef.current &&
+                <Category
+                    categories={categoriesRef.current}
+                    activeCat={activeCat}
+                    setActiveCat={setActiveCat}
+                />} 
+                <ProductList 
+                    products={products} setProducts={setProducts}
+                />
+            </aside>
             </div>
         </main>
     )

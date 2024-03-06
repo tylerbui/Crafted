@@ -18,6 +18,11 @@ const userSchema = new Schema({
       trim: true,
       minLength: 3,
       required: true
+    },
+    // Look into AWS and saving imageURL to make data retrievable
+    profilePicture: {
+      type: String,
+      required: true 
     }
   });
 

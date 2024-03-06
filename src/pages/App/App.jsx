@@ -1,11 +1,12 @@
-import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
+import { useState } from 'react';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+// import NewOrderPage from '../NewOrderPage/NewOrderPage';
+// import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
+import Products from '../Products/Products';
 
 export default function App() {
   //everytime you refresh the page its right here where you check the localstorage in your dev tools 
@@ -20,7 +21,11 @@ export default function App() {
             <NavBar user={user}/>
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<Products />} />
+              <Route path="/" 
+                element={<Products 
+                cart={cart} 
+                setCart={setCart} 
+              />} />
               {/* <Route path="/orders/new" element={<NewOrderPage />} /> */}
               {/* <Route path="/orders" element={<OrderHistoryPage />} /> */}
             </Routes>
