@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react';
 import ProductList from '../../components/ProductList/ProductList';
 import Category from '../../components/Category/Category';
-import './Product.css';
+import './Products.css';
+
 export default function Products(cart,setCart) {
     const [products,setProducts] = useState([]);
     const [activeCat, setActiveCat] = useState('');

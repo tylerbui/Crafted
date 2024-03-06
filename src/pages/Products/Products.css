@@ -1,7 +1,19 @@
-.Products {
-    display: flex;
-    flex-direction:row;
-    justify-content: flex-start;
-    align-items: center;
+.Products { 
+    background-color:lightslategray;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10%;
+    border: 5px solid lightgray;
+    place-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.ProductList {
+    background-color: white; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
     
 }
